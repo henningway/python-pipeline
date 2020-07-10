@@ -57,8 +57,7 @@ class Pipeline:
     Take for instance web middleware: Multiple middlewares receive a request in sequence and collectively produce a
     response. A middleware responsible for authentication might decide that an attempt to login was invalid. It will
     add a 401 status header to the response and return prematurely without continuing the pipeline. In fact, this is
-    how Laravel uses pipelines, and this implementation was inspired by theirs. Why did you have to read so many words
-    to arrive at a real application?
+    how Laravel uses pipelines, and this implementation was inspired by theirs.
 
     # Refactor to pipelines
     Refactoring an existing script into a pipeline is a two step process:
