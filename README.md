@@ -13,14 +13,14 @@ Copy [pipeline.py](pipeline.py) to your project.
 Here is a basic example.
 
 ```python
-pipe('NIAM').through([
+pipe('desserts').through([
     Reverse,
-    lambda s, next: next(s.lower()),
+    lambda s, next: next(s.upper()),
     Wrap('__')
-]).run()
+]).run()  # '__STRESSED__'
 ```
 
-Pipes are provided as list and can be function or class based. Class based pipes have to have a handle method. Both function based pipes and the handle method on class based pipes receive two parameters: the data from the previous pipe and a next-function, that has to be called to hand over to the next pipe. In the example *Reverse* and *Wrap* are examples of class based pipes.
+Pipes are provided as a list and can be function or class based. Class based pipes have to have a handle method. Both function based pipes and the handle method on class based pipes receive two parameters: the data from the previous pipe and a next-function, that has to be called to hand over to the next pipe. In the example above *Reverse* and *Wrap* are examples of class based pipes, while the middle pipe is provided as a lambda.
 
 ```python
 class Reverse(Pipe):
